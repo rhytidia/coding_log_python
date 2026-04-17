@@ -1,5 +1,7 @@
+# Currently working in practice files; will update this soon
+
 def main():
-    print("Hello from coding-log!")
+    pass
 
 
 if __name__ == "__main__":

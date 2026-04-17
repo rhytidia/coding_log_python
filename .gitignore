@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+
+# VS Code
+.vscode/
+
+# Markdown notes, but keep README
+*.md
+!README.md
+
+# Practice files
+practice_files/
