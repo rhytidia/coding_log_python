@@ -12,4 +12,4 @@ See the [[functionality overview]](https://github.com/rhytidia/coding_log_python
 As part of a learning path on [Boot.dev](https://boot.dev), we need to create a personal project. I know python best so decided to create something in python. Though I know one could easily just generate a template for a markdown note and fill it out whenever one wants, I wanted to do this for learning, and also to create something I would actually use. One of my stretch goals is to link it up to a static website to publish the notes publicly, so having the program save to one private folder and then also copy to a public folder (if the user chooses to share that note publicly) will be useful.
 
 ## Status
-Currently writing early-stage code. See the [[progress page]](https://github.com/rhytidia/coding_log_python/wiki/Progress) on the project wiki for deatils.
+MVP completed, working on finished functionality (see [[this project's functionality overview]](https://github.com/rhytidia/coding_log_python/wiki/Functionality-overview). More granular progress can be found on the [[progress page]](https://github.com/rhytidia/coding_log_python/wiki/Progress) for this project.
