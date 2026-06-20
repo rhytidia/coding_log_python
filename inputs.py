@@ -9,7 +9,6 @@ welcome_msg = '''\nWelcome to your coding log.
 First, you will choose a path for the markdown file where your log will be saved. 
 Then you will answer questions and your answers will be saved to the log.\n'''
 
-questions_msg = '''\nYou file will be saved at that path.
-Now, please answer the questions as they come up.
+questions_msg = '''\nNow, please answer the questions as they come up.
 If you want to skip to the next question just hit 'return.'
 If you want to exit early, type 'end'. In that case, only the answers you've provided so far will be saved to the log.\n'''

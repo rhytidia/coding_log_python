@@ -3,11 +3,12 @@ from get_filepath import get_filepath_curr_month
 from date_time_funcs import get_curr_time_mins, get_today_date
 
 ''' 
-Open a file with today's date (or update with current time) and write user-inputted answers to provided questions.
+Open a file with the current month and add an entry for today's date (or update with current time) and write user-inputted 
+answers to provided questions in that file. 
 
 This program takes in a directory path from the user (see get_filepath.py) and, if that file can be opened, 
-it asks the uswer questions and writes their answers to that file under an h2 heading with today's date, then returns the file path. If there is already 
-a header in the file with today's date, it writes "Update at <current_time> under an h3 heading.
+it asks the uswer questions and writes their answers to that file under an h2 heading with today's date, then returns the 
+file path. If there is already a header in the file with today's date, it writes "Update at <current_time> under an h3 heading.
 If the user skips some questions, those questions are not written to the file.
 '''
 
@@ -25,8 +26,10 @@ def main():
                 content = f.read()
                 if today_date not in content:
                     f.write(f"## {today_date}\n\n")
+                    print("\nFile successfully opened; ready to write your coding log for today.")
                 else:
                     f.write(f"### Update at {now_time}\n\n")
+                    print("\nFile successfully opened; ready to update your coding log for today.")
         except PermissionError as e:
             print(f"A permission error occurred: {e}. Please try again or type Ctrl-C to exit")
             get_filepath_curr_month()
