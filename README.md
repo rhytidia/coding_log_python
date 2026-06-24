@@ -13,3 +13,6 @@ As part of a learning path on [Boot.dev](https://boot.dev), we need to create a 
 
 ## Status
 MVP completed, working on finished functionality (see [this project's functionality overview](https://github.com/rhytidia/coding_log_python/wiki/Functionality-overview)). More granular progress can be found on the [progress page](https://github.com/rhytidia/coding_log_python/wiki/Progress) for this project.
+
+## Sample documentation
+As part of the freeCodeCamp Responsive Web Design Certification path, we needed to create a technical documentation page. I decided to create one for this project. You can find it on Code Pen: [Coding log technical documentation (fCC)](https://codepen.io/Rhytidia/pen/JoENVVQ).
