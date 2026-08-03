@@ -1,6 +1,6 @@
 import inputs
 from get_filepath import get_filepath_curr_month
-from date_time_funcs import get_curr_time_mins, get_today_date
+from read_write import open_curr_month_file, write_answers
 
 ''' 
 Open a file with the current month and add an entry for today's date (or update with current time) and write user-inputted 
@@ -14,41 +14,14 @@ If the user skips some questions, those questions are not written to the file.
 
 
 def main():
-    questions = inputs.questions
-    today_date = get_today_date()
-    now_time = get_curr_time_mins()
     print(inputs.welcome_msg)
     file_path = get_filepath_curr_month()
-    if file_path is not None: # Needed because get_filepath() will return None if max number of attempts reached
-        try:
-            with open(file_path, "a+", encoding="utf-8") as f: 
-                f.seek(0)
-                content = f.read()
-                if today_date not in content:
-                    f.write(f"## {today_date}\n\n")
-                    print("\nFile successfully opened; ready to write your coding log for today.")
-                else:
-                    f.write(f"### Update at {now_time}\n\n")
-                    print("\nFile successfully opened; ready to update your coding log for today.")
-        except PermissionError as e:
-            print(f"A permission error occurred: {e}. Please try again or type Ctrl-C to exit")
-            get_filepath_curr_month()
-        except OSError as e:
-            print(f"An OS error occurred: {e}. Please try again or type Ctrl-C to exit")
-            get_filepath_curr_month()
-        print(inputs.questions_msg) # instructions for answering or skipping questions, or ending early
-        for question in questions:
-            answer = input(f"\n{question}\n")
-            if answer == "end":
-                return
-            elif answer == "":
-                continue
-            else: 
-                with open(file_path, "a") as f:
-                    f.write(f"\n**{question}**\n\n")
-                    f.write(f"{answer}\n\n")
-        print(f"Your answers have been saved in a markdown file at {file_path}\n")
-
+    if file_path is None: # Needed because get_filepath() will return None if max number of attempts reached
+        return
+    open_curr_month_file(file_path)
+    print(inputs.questions_msg) # instructions for answering or skipping questions, or ending early
+    write_answers(file_path)
+    
 if __name__ == "__main__":
     main()
 
