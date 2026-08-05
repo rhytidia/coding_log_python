@@ -1,6 +1,6 @@
 import inputs
 from get_filepath import get_filepath_curr_month
-from read_write import open_curr_month_file, write_answers
+from read_write import open_curr_month_file, q_and_a
 
 ''' 
 Open a file with the current month and add an entry for today's date (or update with current time) and write user-inputted 
@@ -14,13 +14,15 @@ If the user skips some questions, those questions are not written to the file.
 
 
 def main():
-    print(inputs.welcome_msg)
+    print(inputs.welcome_msg) 
     file_path = get_filepath_curr_month()
-    if file_path is None: # Needed because get_filepath() will return None if max number of attempts reached
+    # get_filepath() will return None if max number of attempts reached; exit if so
+    if file_path is None:
         return
     open_curr_month_file(file_path)
-    print(inputs.questions_msg) # instructions for answering or skipping questions, or ending early
-    write_answers(file_path)
+    # instructions for answering or skipping questions, or ending early
+    print(inputs.questions_msg) 
+    q_and_a(file_path)
     
 if __name__ == "__main__":
     main()

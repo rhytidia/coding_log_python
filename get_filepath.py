@@ -5,6 +5,7 @@ import os
 joins it to a user-provided directory.'''
 
 def get_filepath_curr_month():
+    print("Start by specifiying a file path for a log file with the current month as title.\n" )
     for i in range(3):
         directory = input("Please provide a path to a directory where you want the file to be saved:\n")
         if not directory:
