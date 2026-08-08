@@ -24,8 +24,8 @@ class TestGetFilepath(unittest.TestCase):
         expected = None
         # check that function returns None if the input is not a directory
         self.assertEqual(actual, expected)
-        # check if a specific print call was called at any time in the function call 
-        # this function tries three times; last one would be max attempts; want to also check print on earlier attempts
+        # this function tries three times; last one would be max attempts; assert_called_with checks last one
+        # and assert_any_call checks that it was called at any time 
         mock_print.assert_any_call("Directory path does not exist or is not a full path, please try again.\n")
         mock_print.assert_called_with("Maximum number of attempts reached; exiting program.\n")
 
@@ -50,6 +50,8 @@ class TestGetFilepath(unittest.TestCase):
         mock_isdir.return_value = True
         curr_month = get_curr_year_month()
         actual = get_filepath_curr_month()
+        # joining the directory with the filename of curr_month.md; 
+        # this is what the function call should return
         expected = f'/valid/directory/{curr_month}.md' 
         self.assertEqual(actual, expected)
 
