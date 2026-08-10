@@ -8,7 +8,7 @@ provided filepath with a filename of <current_year_month>.md: e.g., file/path/20
 This is then the full filepath that read_write.py will use.
 '''
 
-def get_filepath_curr_month():
+def get_filepath_curr_month() -> str | None:
     print("Start by specifying a file path for a log file; a file with the current month as title will be opened at that path.\n")
     for i in range(3):
         directory = input("Please provide a path to a directory where you want the file to be saved:\n")

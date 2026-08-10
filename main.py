@@ -13,7 +13,7 @@ If the user skips some questions or exits early, the questions without answers a
 '''
 
 
-def main():
+def main() -> None:
     print(constants.welcome_msg) 
     file_path = get_filepath_curr_month()
     if file_path is None: # get_filepath will return None if max number of attempts reached
