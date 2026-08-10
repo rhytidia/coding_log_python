@@ -1,11 +1,15 @@
 from date_time_funcs import get_curr_year_month
 import os
 
-'''The following produces a filepath with the current year and month as a filename, and
-joins it to a user-provided directory.'''
+'''
+Asks the user for a filepath to a directory, and checks if it is a directory. The user has
+three chances to provide a valid directory path. If successful, the function joins the user-
+provided filepath with a filename of <current_year_month>.md: e.g., file/path/2026-05.md. 
+This is then the full filepath that read_write.py will use.
+'''
 
 def get_filepath_curr_month():
-    print("Start by specifiying a file path for a log file with the current month as title.\n" )
+    print("Start by specifying a file path for a log file; a file with the current month as title will be opened at that path.\n")
     for i in range(3):
         directory = input("Please provide a path to a directory where you want the file to be saved:\n")
         if not directory:
